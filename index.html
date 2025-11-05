@@ -255,6 +255,186 @@
             transform: translateY(-5px);
         }
 
+        /* Career Section */
+        .career {
+            padding: 5rem 0;
+            background-color: #f1f5f9;
+        }
+
+        .career-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .career-timeline {
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .career-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 30px;
+            position: relative;
+            margin: 20px 0;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            align-self: flex-end;
+            justify-content: flex-start;
+            padding-left: 30px;
+            padding-right: 0;
+            margin-left: 50%;
+        }
+
+        .timeline-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: relative;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+            border: 4px solid var(--primary);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -10px;
+            right: auto;
+        }
+
+        .timeline-content h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content .date {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .stat-card .label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .gallery-content {
+            margin-top: 3rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .video-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+            display: block;
+        }
+
+        .video-caption {
+            padding: 15px;
+            background-color: white;
+        }
+
+        .video-caption h4 {
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        .video-caption p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .playlist-section {
+            margin-top: 4rem;
+        }
+
+        .playlist-container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
         /* Contact Section */
         .contact {
             padding: 5rem 0;
@@ -368,6 +548,30 @@
             .contact-content {
                 flex-direction: column;
             }
+
+            .career-timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 70px;
+            }
+
+            .timeline-content::after {
+                left: 50px;
+                right: auto;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: 50px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -404,6 +608,10 @@
                 gap: 1.5rem;
                 margin-top: 1.5rem;
             }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 576px) {
@@ -438,6 +646,14 @@
 
             .hero h1 {
                 font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -528,6 +744,127 @@
         </div>
     </section>
 
+    <!-- Career Section -->
+    <section class="career" id="career">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cricket Career</h2>
+            </div>
+            <div class="career-content">
+                <div class="career-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>International Debut</h3>
+                            <div class="date">2018</div>
+                            <p>Made my international debut for Pakistan women's cricket team, marking the beginning of my professional cricket career.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>T20I Debut</h3>
+                            <div class="date">October 2019</div>
+                            <p>Played my first T20 International match against England women's cricket team.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>ODI Debut</h3>
+                            <div class="date">December 2019</div>
+                            <p>Made my One Day International debut against England, showcasing my skills in the 50-over format.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>ICC Women's T20 World Cup</h3>
+                            <div class="date">2020</div>
+                            <p>Represented Pakistan in the ICC Women's T20 World Cup held in Australia, competing against the world's best teams.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Commonwealth Games</h3>
+                            <div class="date">2022</div>
+                            <p>Part of the Pakistan women's cricket team that participated in the Commonwealth Games in Birmingham.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-baseball-ball"></i>
+                        <div class="number">20+</div>
+                        <div class="label">International Matches</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-trophy"></i>
+                        <div class="number">2</div>
+                        <div class="label">World Cup Appearances</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-flag"></i>
+                        <div class="number">10+</div>
+                        <div class="label">Countries Played In</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="number">5+</div>
+                        <div class="label">Years Professional Career</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Video Gallery</h2>
+            </div>
+            <div class="gallery-content">
+                <div class="video-grid">
+                    <div class="video-item">
+                        <iframe src="https://www.youtube.com/embed/jjfPxICldhM" title="Cricket Reel 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="video-caption">
+                            <h4>Training Session</h4>
+                            <p>Practice makes perfect - working on my technique</p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <iframe src="https://www.youtube.com/embed/BPWM6pLBrh8" title="Cricket Reel 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="video-caption">
+                            <h4>Match Highlights</h4>
+                            <p>Some of my best moments on the field</p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <iframe src="https://www.youtube.com/embed/UsDdch2LwAA" title="Cricket Reel 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="video-caption">
+                            <h4>Fitness Routine</h4>
+                            <p>Staying in top condition for peak performance</p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <iframe src="https://www.youtube.com/embed/yTqEEZCnvjk" title="Cricket Reel 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="video-caption">
+                            <h4>Team Collaboration</h4>
+                            <p>Working together with my teammates</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="playlist-section">
+                    <div class="section-title">
+                        <h3>Full YouTube Playlist</h3>
+                    </div>
+                    <div class="playlist-container">
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/videoseries?list=PLqynRw1QUh5PrAinCuf1PCqc-dF8NoAaK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -587,6 +924,7 @@
                             <li><a href="#home">Home</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#career">Career</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
